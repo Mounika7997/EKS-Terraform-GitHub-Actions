@@ -11,15 +11,3 @@ terraform {
 provider "aws" {
   region  = var.aws-region
 }
-
-# backend.tf
-
-terraform {
-  backend "s3" {
-    bucket         = "my-eks"
-    region         = "us-east-1"
-    key            = "eks/backend.tf"
-    dynamodb_table = "lock-id"
-    encrypt        = true
-  }
-}
